@@ -263,6 +263,10 @@ public class SHSearchBar: UIView, SHSearchBarDelegate {
         if shouldCancel {
             resetTextField()
             textField.resignFirstResponder()
+            
+            if !config.hideCancelButtonAfterEndEditing {
+                updateCancelButtonVisibility(makeVisible: false)
+            }
         }
     }
 
@@ -316,7 +320,7 @@ extension SHSearchBar: UITextFieldDelegate {
 
     public func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         let shouldEnd = delegate?.searchBarShouldEndEditing(self) ?? searchBarShouldEndEditing(self)
-        if config.hideCancelButtonAfterEndEditing {
+        if config.hideCancelButtonAfterEndEditing, shouldEnd {
             updateCancelButtonVisibility(makeVisible: false)
         }
         return shouldEnd
