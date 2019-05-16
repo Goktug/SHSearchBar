@@ -264,6 +264,7 @@ public class SHSearchBar: UIView, SHSearchBarDelegate {
             if !config.hideCancelButtonAfterEndEditing {
                 updateCancelButtonVisibility(makeVisible: false)
                 textField.text = ""
+                delegate?.searchBar(self, textDidChange: "")
             } else {
                 resetTextField()
             }
