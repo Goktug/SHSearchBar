@@ -44,6 +44,9 @@ public struct SHSearchBarConfig {
 
     /// Controls when to show the clear button.
     public var clearButtonMode: UITextField.ViewMode = .whileEditing
+    
+    /// Hide cancel button after end editing
+    public var hideCancelButtonAfterEndEditing: Bool = true
 
     // MARK: - Lifecycle
 
