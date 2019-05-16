@@ -180,6 +180,7 @@ func defaultSearchBar(withRasterSize rasterSize: CGFloat, leftView: UIView?, rig
     config.leftView = leftView
     config.rightView = rightView
     config.useCancelButton = useCancelButton
+    config.hideCancelButtonAfterEndEditing = false
 
     if leftView != nil {
         config.leftViewMode = .always
